@@ -1,26 +1,55 @@
+import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const QuizDetails = ({ quiz }) => {
     const { correctAnswer, question, options } = quiz;
-    console.log(quiz);
+
+
+    const handleSelectBtn = (option) => {
+        if (option === correctAnswer) {
+            toast.success('WoW...Good Job !', {
+                position: toast.POSITION.TOP_CENTER
+            });
+        } else {
+            toast.error('Oops..Wrong Answer !', {
+                position: toast.POSITION.TOP_CENTER
+            });
+        }
+    }
+
+    const handleEyeBtn = () => {
+        toast.info(`Answer: ${correctAnswer}`, {
+            position: toast.POSITION.BOTTOM_CENTER
+        });
+
+    }
     return (
 
-        <div className='mt-5 bg-secondary bg-opacity-100  border border-warning rounded' style={{ width: '50%', margin: "auto" }}>
-            <div className='mt-3 fw-bold' dangerouslySetInnerHTML={{ __html: question }}>
+        <div className='mt-5 p-4 shadow bg-secondary bg-opacity-100  border border-warning rounded' style={{ width: '50%', margin: "auto" }}>
+            <div className='d-flex position-relative'>
+                <div className='mt-3 fw-bold text-start ps-2' dangerouslySetInnerHTML={{ __html: question }}>
+
+                </div>
+                <div className='position-absolute top-0 end-0 me-3'>
+                    <FontAwesomeIcon onClick={handleEyeBtn} icon={faEye} />
+                </div>
+            </div>
+            <div className='d-flex justify-content-around gap-4 p-3'>
+                <Button variant="outline-warning" onClick={() => handleSelectBtn(options[0])}> {options[0]}</Button>{''}
+                <Button variant="outline-warning" onClick={() => handleSelectBtn(options[1])}> {options[1]}</Button>{''}
 
             </div>
             <div className='d-flex justify-content-around gap-4 p-3'>
-                <Button variant="outline-warning"> {options[0]}</Button>{''}
-                <Button variant="outline-warning"> {options[1]}</Button>{''}
-
-            </div>
-            <div className='d-flex justify-content-around gap-4 p-3'>
-                <Button variant="outline-warning">{options[2]}</Button>{''}
-                {options[3] ? <Button variant="outline-warning">  {options[3]}</Button> : ''}
+                <Button variant="outline-warning" onClick={() => handleSelectBtn(options[2])}>{options[2]}</Button>{''}
+                {options[3] ? <Button variant="outline-warning" onClick={() => handleSelectBtn(options[3])}>  {options[3]}</Button> : ''}
 
 
             </div>
+            <ToastContainer />
 
         </div>
 
