@@ -2,7 +2,7 @@
 
 # Project Name : Quick quiz
 
-*Live Website Link:* []
+*Live Website Link:* [https://enchanting-cuchufli-9964a5.netlify.app]
 
 ***
 
