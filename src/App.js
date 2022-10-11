@@ -2,8 +2,11 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import Blog from './components/Blog/Blog';
+import Errorpage from './components/Errorpage/Errorpage';
 import Home from './components/Home/Home';
 import Main from './components/layout/Main';
+import Statistics from './components/Statistics/Statistics';
 
 
 function App() {
@@ -11,6 +14,7 @@ function App() {
     {
       path: '/',
       element: <Main></Main>,
+      errorElement: <Errorpage></Errorpage>,
       children: [
         {
           path: '/',
@@ -19,6 +23,13 @@ function App() {
         {
           path: '/home',
           element: <Home></Home>
+        }, {
+          path: '/statistics',
+          element: <Statistics></Statistics>
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
         }
       ]
     }

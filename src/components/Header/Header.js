@@ -14,9 +14,9 @@ const Header = () => {
 
 
             <div className='text-center position-absolute top-50 start-50 translate-middle'>
-                <h2>Welcome to <span className='fw-bold fs-1'>Quick quiz</span></h2>
+                <h2 className="text-warning">Welcome to <span className='fw-bold fs-1 text-dark'>Quick quiz</span></h2>
                 <p>We are here to map your talent. Feel free to examine yourself...!!!</p>
-                <Button variant="outline-warning">Know More</Button>{' '}
+                <Button variant="outline-warning" href="/blog">Know More</Button>{' '}
             </div>
 
         </div>
