@@ -1,0 +1,19 @@
+.btn-option {
+    max-width: 200px;
+
+}
+
+.quiz-container {
+    width: 50%;
+}
+
+
+@media screen and (max-width: 480px) {
+
+
+    .quiz-container {
+        width: 100%;
+    }
+
+
+}
