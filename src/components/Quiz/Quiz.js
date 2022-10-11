@@ -6,7 +6,7 @@ const Quiz = () => {
     const { data } = useLoaderData();
 
     const { name, questions, total } = data;
-    console.log(questions);
+   
     return (
         <div>
             <h2 className='mt-5 fw-bold'>Questions Of <span className="text-warning">{name}</span></h2>

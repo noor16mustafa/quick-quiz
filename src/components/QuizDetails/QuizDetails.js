@@ -24,7 +24,7 @@ const QuizDetails = ({ quiz }) => {
 
     const handleEyeBtn = () => {
         toast.info(`Answer: ${correctAnswer}`, {
-            position: toast.POSITION.BOTTOM_CENTER
+            position: toast.POSITION.TOP_CENTER
         });
 
     }
@@ -39,7 +39,7 @@ const QuizDetails = ({ quiz }) => {
                     <FontAwesomeIcon onClick={handleEyeBtn} icon={faEye} />
                 </div>
             </div>
-            {/* col col-md-12 d-flex flex-sm-col */}
+
             <div className='btn d-flex justify-content-around gap-4 p-3 container-fluid'>
 
                 <Button className='btn-option' variant="outline-warning" onClick={() => handleSelectBtn(options[0])}> {options[0]}</Button>{''}
