@@ -4,8 +4,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 const Statistics = () => {
     const { data } = useLoaderData();
-    //const { total } = data;
-    console.log(data);
+
     return (
         <div className='mb-5' style={{ margin: 'auto' }}>
             <h1 className='my-4 text-warning fw-bolder'>Area Chart For Total Quiz data:</h1>
